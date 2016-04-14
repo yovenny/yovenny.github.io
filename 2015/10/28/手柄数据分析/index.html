@@ -21,8 +21,10 @@ Flydigi Motionelf X9769">
     
     
     
-    <link rel="alternate" href="/atom.xml" title="one moment" type="application/atom+xml">
+    <link rel="alternate" href="atom.xml" title="one moment" type="application/atom+xml">
     
+    
+    <link rel="icon" href="/img/favicon.ico">
     
     
     <link rel="stylesheet" href="/css/style.css">
@@ -31,7 +33,7 @@ Flydigi Motionelf X9769">
         var _hmt = _hmt || [];
         (function() {
             var hm = document.createElement("script");
-            var _bdId ='null';
+            var _bdId ='391982416296a0d54221f59fe35250d4';
              hm.src = "//hm.baidu.com/hm.js?" + _bdId;
              var s = document.getElementsByTagName("script")[0]; 
              s.parentNode.insertBefore(hm, s);
@@ -57,12 +59,6 @@ Flydigi Motionelf X9769">
 						<li><a href="/">首页</a></li>
 					
 						<li><a href="/archives">归档</a></li>
-					
-						<li><a href="/categories">分类</a></li>
-					
-						<li><a href="/about">关于</a></li>
-					
-						<li><a href="/guestbook">留言</a></li>
 					
 					<li>
 					
@@ -97,6 +93,11 @@ Flydigi Motionelf X9769">
 	<div class="article-content">
 		
 		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">文章目录</strong>
+		
+		</div>
+		
 		<p>名称排列对应如下：</p>
 <p>—————–》<br>deviceName<br>id<br>motionRangeSize<br>productId<br>Sources<br>type<br>VendorId<br>—————-》</p>
 <p>飞智手柄数据如下：</p>
@@ -126,7 +127,7 @@ Flydigi Motionelf X9769">
 
 <div class="article-share" id="share">
 
-  <div data-url="http://yovenny.com/2015/10/28/手柄数据分析/" data-title="手柄数据分析 | one moment" data-tsina="undefined" class="share clearfix">
+  <div data-url="http://yovenny.com/2015/10/28/手柄数据分析/" data-title="手柄数据分析 | one moment" data-tsina="null" class="share clearfix">
   </div>
 
 </div>
@@ -136,18 +137,18 @@ Flydigi Motionelf X9769">
 <nav class="article-nav clearfix">
  
  <div class="prev" >
- <a href="/2015/10/28/一个签名引发的血案/" title="一个签名引发的血案">
+ <a href="/2015/10/28/web 面试参考/" title="面试参考">
   <strong>PREVIOUS:</strong><br/>
   <span>
-  一个签名引发的血案</span>
+  面试参考</span>
 </a>
 </div>
 
 
 <div class="next">
-<a href="/2015/09/19/20150919/"  title="程序员">
+<a href="/2015/10/28/一个签名引发的血案/"  title="一个签名引发的血案">
  <strong>NEXT:</strong><br/> 
- <span>程序员
+ <span>一个签名引发的血案
 </span>
 </a>
 </div>
@@ -165,6 +166,11 @@ Flydigi Motionelf X9769">
 </div>  
       <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
 
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">文章目录</strong>
+  
+  </div>
+
 <div id="asidepart">
 <div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
 <aside class="clearfix">
@@ -174,11 +180,7 @@ Flydigi Motionelf X9769">
 	
 	<div class="social-list" class="clearfix">
 		
-		<a href="http://weibo.com/2940477513" target="_blank" title="weibo"></a>
 		
-		
-		
-		<a href="https://github.com/yovenny" target="_blank" title="github"></a>
 		
 		
 		
@@ -189,14 +191,6 @@ Flydigi Motionelf X9769">
 
   
 
-  
-<div class="widget">
-  <p class="asidetitle">近期评论</p>
-    
-<ul class="entry ds-recent-comments" data-num-items="8" data-show-avatars="0" data-show-time="1" data-show-admin="0" data-excerpt-length="70"></ul>
-</div>
-
-
   <div class="linkslist">
   <p class="asidetitle">友情链接</p>
     <ul>
@@ -205,6 +199,12 @@ Flydigi Motionelf X9769">
     </ul>
 </div>
 
+
+  <div class="rsspart">
+	<a href="atom.xml" target="_blank" title="rss">RSS 订阅</a>
+</div>
+
+  
 
 </aside>
 </div>
@@ -245,6 +245,8 @@ $(document).ready(function(){
       m.removeClass('moveMain');
       a.css('display', 'block').removeClass('fadeOut');
       o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
         
     }
   });
@@ -327,7 +329,7 @@ $(document).ready(function(){
 
 
 <script type="text/javascript">
-  var duoshuoQuery = {short_name:"14077954"};
+  var duoshuoQuery = {short_name:"null"};
   (function() {
     var ds = document.createElement('script');
     ds.type = 'text/javascript';ds.async = true;
@@ -340,27 +342,6 @@ $(document).ready(function(){
 
 
 
-
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
-<script src="/fancybox/jquery.fancybox.pack.js"></script>
-<script type="text/javascript">
-$(document).ready(function(){ 
-  $('.article-content').each(function(i){
-    $(this).find('img').each(function(){
-      if ($(this).parent().hasClass('fancybox')) return;
-      var alt = this.alt;
-      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
-      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
-    });
-    $(this).find('.fancybox').each(function(){
-      $(this).attr('rel', 'article' + i);
-    });
-  });
-  if($.fancybox){
-    $('.fancybox').fancybox();
-  }
-}); 
-</script>
 
 
 

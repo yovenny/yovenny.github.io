@@ -21,8 +21,10 @@
     
     
     
-    <link rel="alternate" href="/atom.xml" title="one moment" type="application/atom+xml">
+    <link rel="alternate" href="atom.xml" title="one moment" type="application/atom+xml">
     
+    
+    <link rel="icon" href="/img/favicon.ico">
     
     
     <link rel="stylesheet" href="/css/style.css">
@@ -31,7 +33,7 @@
         var _hmt = _hmt || [];
         (function() {
             var hm = document.createElement("script");
-            var _bdId ='null';
+            var _bdId ='391982416296a0d54221f59fe35250d4';
              hm.src = "//hm.baidu.com/hm.js?" + _bdId;
              var s = document.getElementsByTagName("script")[0]; 
              s.parentNode.insertBefore(hm, s);
@@ -57,12 +59,6 @@
 						<li><a href="/">首页</a></li>
 					
 						<li><a href="/archives">归档</a></li>
-					
-						<li><a href="/categories">分类</a></li>
-					
-						<li><a href="/about">关于</a></li>
-					
-						<li><a href="/guestbook">留言</a></li>
 					
 					<li>
 					
@@ -97,6 +93,11 @@
 	<div class="article-content">
 		
 		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">文章目录</strong>
+		
+		</div>
+		
 		<p>前言：<br>    听说stetho功能极其强大，包括查看：网络请求的整个过程，查看sqlite数据库，所以就报着好奇心checkout了官方的demo。</p>
 <p>构建-编译-运行</p>
 <pre><code>更改build.gradle..的环境与本地环境相匹配。
@@ -114,7 +115,7 @@
 
 <div class="article-share" id="share">
 
-  <div data-url="http://yovenny.com/2015/10/30/stetho使用体验/" data-title="stetho使用体验 | one moment" data-tsina="undefined" class="share clearfix">
+  <div data-url="http://yovenny.com/2015/10/30/stetho使用体验/" data-title="stetho使用体验 | one moment" data-tsina="null" class="share clearfix">
   </div>
 
 </div>
@@ -153,6 +154,11 @@
 </div>  
       <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
 
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">文章目录</strong>
+  
+  </div>
+
 <div id="asidepart">
 <div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
 <aside class="clearfix">
@@ -162,11 +168,7 @@
 	
 	<div class="social-list" class="clearfix">
 		
-		<a href="http://weibo.com/2940477513" target="_blank" title="weibo"></a>
 		
-		
-		
-		<a href="https://github.com/yovenny" target="_blank" title="github"></a>
 		
 		
 		
@@ -177,14 +179,6 @@
 
   
 
-  
-<div class="widget">
-  <p class="asidetitle">近期评论</p>
-    
-<ul class="entry ds-recent-comments" data-num-items="8" data-show-avatars="0" data-show-time="1" data-show-admin="0" data-excerpt-length="70"></ul>
-</div>
-
-
   <div class="linkslist">
   <p class="asidetitle">友情链接</p>
     <ul>
@@ -193,6 +187,12 @@
     </ul>
 </div>
 
+
+  <div class="rsspart">
+	<a href="atom.xml" target="_blank" title="rss">RSS 订阅</a>
+</div>
+
+  
 
 </aside>
 </div>
@@ -233,6 +233,8 @@ $(document).ready(function(){
       m.removeClass('moveMain');
       a.css('display', 'block').removeClass('fadeOut');
       o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
         
     }
   });
@@ -315,7 +317,7 @@ $(document).ready(function(){
 
 
 <script type="text/javascript">
-  var duoshuoQuery = {short_name:"14077954"};
+  var duoshuoQuery = {short_name:"null"};
   (function() {
     var ds = document.createElement('script');
     ds.type = 'text/javascript';ds.async = true;
@@ -328,27 +330,6 @@ $(document).ready(function(){
 
 
 
-
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
-<script src="/fancybox/jquery.fancybox.pack.js"></script>
-<script type="text/javascript">
-$(document).ready(function(){ 
-  $('.article-content').each(function(i){
-    $(this).find('img').each(function(){
-      if ($(this).parent().hasClass('fancybox')) return;
-      var alt = this.alt;
-      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
-      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
-    });
-    $(this).find('.fancybox').each(function(){
-      $(this).attr('rel', 'article' + i);
-    });
-  });
-  if($.fancybox){
-    $('.fancybox').fancybox();
-  }
-}); 
-</script>
 
 
 
