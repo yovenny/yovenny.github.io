@@ -12,8 +12,8 @@
     
     <meta name="author" content="bocheng">
     
-    <meta name="description" content="产品给出需求，这不是很简单吗？于是在xml添加了如下代码：   123  &amp;lt;EditTextandroid:maxLeßngth=&quot;100&quot;android:maxLines=&quot;10&quot;/&amp;gt;
- 而且我只需要在1.TextWatcher.onTextChanged 中监听s.length&amp;gt">
+    <meta name="description" content="产品给出需求，这不是很简单吗？于是在xml添加了如下代码：123  &amp;lt;EditTextandroid:maxLeßngth=&quot;100&quot;android:maxLines=&quot;10&quot;/&amp;gt;
+ 而且我只需要在1.TextWatcher.onTextChanged 中监听s.length&amp;gt;10">
     
     
     
@@ -81,7 +81,7 @@
     </p>
   <p class="article-time">
     <time datetime="2016-04-19T09:00:50.000Z" itemprop="datePublished">2016-04-19</time>
-    更新日期:<time datetime="2016-04-19T09:28:33.000Z" itemprop="dateModified">2016-04-19</time>
+    更新日期:<time datetime="2016-04-28T09:51:59.000Z" itemprop="dateModified">2016-04-28</time>
     
   </p>
 </header>
@@ -93,7 +93,7 @@
 		
 		</div>
 		
-		<p>  产品给出需求，这不是很简单吗？于是在xml添加了如下代码：<br>   <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">  &lt;EditText</span><br><span class="line">android:maxLeßngth=<span class="string">"100"</span></span><br><span class="line">android:maxLines=<span class="string">"10"</span>/&gt;</span><br></pre></td></tr></table></figure></p>
+		<p>  产品给出需求，这不是很简单吗？于是在xml添加了如下代码：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">  &lt;EditText</span><br><span class="line">android:maxLeßngth=<span class="string">"100"</span></span><br><span class="line">android:maxLines=<span class="string">"10"</span>/&gt;</span><br></pre></td></tr></table></figure></p>
 <p> 而且我只需要在1.TextWatcher.onTextChanged 中监听s.length&gt;100，2.EditText.getLineCount&gt;10 不就行了。</p>
 <p>实际运行发现：1. s.length从来就不 &gt;100,（maxLength=”100“）字符max后，便不能提示。<br>            2.maxLines（xml）只能对EditText高度进行限制，而不能限制实际字符行数。</p>
 <p> 于是我便从网上寻找解决方案：</p>
@@ -124,6 +124,14 @@
 	
 <nav class="article-nav clearfix">
  
+ <div class="prev" >
+ <a href="/2016/04/28/gradle 上传jcenter/" title="gradle 上传jcenter">
+  <strong>PREVIOUS:</strong><br/>
+  <span>
+  gradle 上传jcenter</span>
+</a>
+</div>
+
 
 <div class="next">
 <a href="/2015/10/30/stetho使用体验/"  title="stetho使用体验">

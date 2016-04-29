@@ -7,16 +7,13 @@
   <meta name="360-site-verification" content="67fbcc5a67f4c65c057315b28fa0b2c8" />
 <meta name="google-site-verification" content="2GzxQ0VtXwTSUdmGm6DzcmhTzM_I9QmzCb_pzpMzD88" />
   
-    <title>手柄数据分析 | one moment</title>
+    <title>gradle 上传jcenter | one moment</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
     
     <meta name="author" content="bocheng">
     
-    <meta name="description" content="名称排列对应如下：
-—————–》deviceNameidmotionRangeSizeproductIdSourcestypeVendorId—————-》
-飞智手柄数据如下：
-Flydigi Motionelf X9849232819401204 
-Flydigi Motionelf X9769">
+    <meta name="description" content="鉴于目前blog没有深度的状态，继续写些零碎 -_- 。。。说下上传meven的必要文件：
+##两个链接：            http://www.cnblogs.com/qianxudetianxia/p/4322331.html            http://www.jcodecrae">
     
     
     
@@ -76,15 +73,15 @@ Flydigi Motionelf X9769">
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2015/10/28/手柄数据分析/" title="手柄数据分析" itemprop="url">手柄数据分析</a>
+      <a href="/2016/04/28/gradle 上传jcenter/" title="gradle 上传jcenter" itemprop="url">gradle 上传jcenter</a>
   </h1>
   <p class="article-author">By
     
       <a href="http://yovenny.com" title="bocheng">bocheng</a>
     </p>
   <p class="article-time">
-    <time datetime="2015-10-28T14:28:18.000Z" itemprop="datePublished">2015-10-28</time>
-    更新日期:<time datetime="2016-04-13T05:43:47.000Z" itemprop="dateModified">2016-04-13</time>
+    <time datetime="2016-04-28T09:55:18.000Z" itemprop="datePublished">2016-04-28</time>
+    更新日期:<time datetime="2016-04-29T02:18:25.000Z" itemprop="dateModified">2016-04-29</time>
     
   </p>
 </header>
@@ -96,26 +93,32 @@ Flydigi Motionelf X9769">
 		
 		</div>
 		
-		<p>名称排列对应如下：</p>
-<p>—————–》<br>deviceName<br>id<br>motionRangeSize<br>productId<br>Sources<br>type<br>VendorId<br>—————-》</p>
-<p>飞智手柄数据如下：</p>
-<p>Flydigi Motionelf X9<br>8<br>4<br>9232<br>8194<br>0<br>1204 </p>
-<p>Flydigi Motionelf X9<br>7<br>6<br>9232<br>16778513<br>1<br>1204</p>
-<p>Flydigi Motionelf X9<br>9<br>1<br>9232<br>16779025<br>2<br>1204</p>
-<p>飞智手柄数据分析：<br>1.InputDevice中motionRangeSize==8一个也没有，所以中这个条件不能成为所有（游戏控制Inputdevice）的依据</p>
-<p>gameSir手柄数据分析：</p>
-<p>g3s增强版中（3个InputDevice）：1.sources 支持InputDevice.SOURCE_JOYSTICK（1000000000000000000000000：16777216）：2 个 InputDevice。<br>                               2.motionRangeSize==8只有一个InputDevice且为游戏控制。</p>
-<p>g3f家庭版中（2个InputDevice）：1.sources 支持InputDevice.SOURCE_JOYSTICK：2 个 InputDevice 且 motionRangeSize==8 。 </p>
-<p>source对比<br>                                                      2进制                                    10进制                         16进制<br>SOURCE_JOYSTICK=0x01000000 | SOURCE_CLASS_JOYSTICK   1000000000000000000010000               16777232                         0x10000100<br>                                                     1000000000000000000000000               16777216                         0x01000000<br>SOURCE_CLASS_JOYSTICK                                  0000000000000000000010000                    16                              0x00000010</p>
-<p>SOURCE_KEYBOARD = 0x00000100 | SOURCE_CLASS_BUTTON;  0000000000000000100000001                  257                               0x101<br>                                                     0000000000000000100000000                  256                               0x00000100<br>SOURCE_CLASS_BUTTON = 0x00000001                     0000000000000000000000001                   1                                   1</p>
-<p>SOURCE_MOUSE                                            0000000000010000000000010                    8194                               0x00002002</p>
-<p>InputDevice的类型支持分析如下：（采用25位二进制（最高位32）的位数来表示usb外接设备的支持)，<em>支持类型则进行&amp;运算</em></p>
-<p>飞智手柄sources数据<br>16778513 -&gt; 1000000000000010100010001    支持KEYBOARD，JOYSTICK   （hit-&gt;device）<br>16779025 -&gt; 1000000000000011100010001    支持KEYBOARD，JOYSTICK     两组对比第十位不一样</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span><br><span class="line"> * There is no keyboard.</span><br><span class="line"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> KEYBOARD_TYPE_NONE = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span><br><span class="line"> * The keyboard is not fully alphabetic.  It may be a numeric keypad or an assortment</span><br><span class="line"> * of buttons that are not mapped as alphabetic keys suitable for text input.按键映射为字母键不适合文本输入</span><br><span class="line"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> KEYBOARD_TYPE_NON_ALPHABETIC = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span><br><span class="line"> * The keyboard supports a complement of alphabetic keys.键盘字母键的补充支持。</span><br><span class="line"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> KEYBOARD_TYPE_ALPHABETIC = <span class="number">2</span>;</span><br></pre></td></tr></table></figure>
-<p>gameSir 蓝牙模式下，两只手柄同联。<br>        motionRangeSize==12（加次判断条件）<br>        source=  1000000000010010100010011（16786707）</p>
-<pre><code>联想条件：motionsize值比较大的。
-</code></pre><p>这个数据对比：说明source也不能成为唯一判断的标准。</p>
-<p>总结：目前没发现唯一的标准：编码需按照不同的设备进支持条件搜索。<br>可参考的条件：<br>    1.keyboardType&gt;=1(飞智手柄。过滤掉type=2&amp;&amp;name=Flydigi Motionelf X9 )<br>    2.gamesir设备 sources 支持InputDevice.SOURCE_JOYSTICK&amp;&amp;motionRangeSize==8 </p>
+		<p>鉴于目前blog没有深度的状态，继续写些零碎 -_- 。。。<br>说下上传meven的必要文件：</p>
+<p>##两个链接：<br>            <a href="http://www.cnblogs.com/qianxudetianxia/p/4322331.html" target="_blank" rel="external">http://www.cnblogs.com/qianxudetianxia/p/4322331.html</a><br>            <a href="http://www.jcodecraeer.com/a/anzhuokaifa/Android_Studio/2015/0227/2502.html" target="_blank" rel="external">http://www.jcodecraeer.com/a/anzhuokaifa/Android_Studio/2015/0227/2502.html</a><br>按照两个链接开始了jcenter的上传之旅。<br>             按照上面步骤的步骤基本可以完成上传，在这提一下上传过程中遇到的问题。</p>
+<p>##Issue<br>因为上两篇文章是基于androidStudio版本比较低的情况写的，所一些配置必须更新为与androidStudio相匹配。<br>项目下的build.gradle如下：(其余跟原链接相同)<br><figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Top-level build file where you can add configuration options common to all sub-projects/modules.</span></span><br><span class="line">buildscript &#123;</span><br><span class="line">    repositories &#123;</span><br><span class="line">        jcenter()</span><br><span class="line">        maven &#123;</span><br><span class="line">            url <span class="string">"https://plugins.gradle.org/m2/"</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    dependencies &#123;</span><br><span class="line">        classpath <span class="string">'com.android.tools.build:gradle:2.1.0-rc1'</span></span><br><span class="line">        classpath <span class="string">'com.github.dcendents:android-maven-gradle-plugin:1.3'</span></span><br><span class="line">        classpath <span class="string">"com.jfrog.bintray.gradle:gradle-bintray-plugin:1.6"</span></span><br><span class="line">        <span class="comment">// <span class="doctag">NOTE:</span> Do not place your application dependencies here; they belong</span></span><br><span class="line">        <span class="comment">// in the individual module build.gradle files</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">allprojects &#123;</span><br><span class="line">    repositories &#123;</span><br><span class="line">        jcenter()</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>##相关知识点</p>
+<p>###了解aar文件</p>
+<p>仓库中存储的有两种类型的library：jar 和 aar。jar文件大家都知道，但是什么是aar文件呢？</p>
+<p>aar文件时在jar文件之上开发的。之所以有它是因为有些Android Library需要植入一些安卓特有的文件，比如AndroidManifest.xml，资源文件，Assets或者JNI。这些都不是jar文件的标准。</p>
+<p>因此aar文件就时发明出来包含所有这些东西的。总的来说它和jar一样只是普通的zip文件，不过具有不同的文件结构。jar文件以classes.jar的名字被嵌入到aar文件中。其余的文件罗列如下：</p>
+<p>– /AndroidManifest.xml (mandatory)</p>
+<p>– /classes.jar (mandatory)</p>
+<p>– /res/ (mandatory)</p>
+<p>– /R.txt (mandatory)</p>
+<p>– /assets/ (optional)</p>
+<p>– /libs/<br>.jar (optional)</p>
+<p>/ .so (optional)<br>– /proguard.txt (optional)</p>
+<p>– /lint.jar (optional)</p>
+<p>可以看到.aar文件是专门为安卓设计的。因此这篇文章将教你如何创建与上传一个aar形式的library。</p>
+<p>##上传的步骤</p>
+<p>-通过gradew执行这些任务即可。<br>gradlew javadocJar<br>gradlew sourcesJar<br>gradlew install<br>gradlew bintrayUpload<br>-或通过gradle可视化窗口依次执行上面的命令。<br>没有任何错误输出便说明已经成功。</p>
+<p>##提交审核<br>登陆bintray主页，搜索包名添加到jcenter（不然的话：buildscript你得这样写才能添加依赖</p>
+<pre><code class="groovy">maven {
+            url <span class="string">"https://bintray.com/you package name"</span>
+        }）
+</code></pre>
+<p> )<br> 提交说明可以不用填。</p>
+<p> ##关于审核通过的通知<br> 大约过了两个小时，我在bintray主页和邮箱都没有看到审核通过的通知，并且<a href="http://jcenter.bintray.com/com／＊／＊也没找到该路径，但本地测试该库的依赖情况，发现依赖成功了，可能是同步问题吧，费解。" target="_blank" rel="external">http://jcenter.bintray.com/com／＊／＊也没找到该路径，但本地测试该库的依赖情况，发现依赖成功了，可能是同步问题吧，费解。</a><br> 然后明天早我便发现库可以在jcenter找到，也收到了邮箱的通知，大概前后相距6，7个钟。</p>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -125,7 +128,7 @@ Flydigi Motionelf X9769">
 
 <div class="article-share" id="share">
 
-  <div data-url="http://yovenny.com/2015/10/28/手柄数据分析/" data-title="手柄数据分析 | one moment" data-tsina="null" class="share clearfix">
+  <div data-url="http://yovenny.com/2016/04/28/gradle 上传jcenter/" data-title="gradle 上传jcenter | one moment" data-tsina="null" class="share clearfix">
   </div>
 
 </div>
@@ -134,19 +137,11 @@ Flydigi Motionelf X9769">
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2015/10/28/一个签名引发的血案/" title="一个签名引发的血案">
-  <strong>PREVIOUS:</strong><br/>
-  <span>
-  一个签名引发的血案</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2015/09/19/20150919/"  title="程序员">
+<a href="/2016/04/19/关于EditText限制行数｀字符并提示/"  title="关于EditText限制行数｀字符并提示">
  <strong>NEXT:</strong><br/> 
- <span>程序员
+ <span>关于EditText限制行数｀字符并提示
 </span>
 </a>
 </div>
@@ -156,7 +151,7 @@ Flydigi Motionelf X9769">
 	
 <section class="comment">
 	
-	<div class="ds-thread" data-title="手柄数据分析" data-thread-key="手柄数据分析" data-author-key="bocheng" data-url="http://yovenny.com/post/手柄数据分析"></div>
+	<div class="ds-thread" data-title="gradle 上传jcenter" data-thread-key="gradle 上传jcenter" data-author-key="bocheng" data-url="http://yovenny.com/post/gradle 上传jcenter"></div>
 	
 </section>
 
