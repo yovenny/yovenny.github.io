@@ -13,10 +13,30 @@
     <meta name="author" content="bocheng">
     
     <meta name="description" content="名称排列对应如下：
-—————–》deviceNameidmotionRangeSizeproductIdSourcestypeVendorId—————-》
-飞智手柄数据如下：
-Flydigi Motionelf X9849232819401204 
-Flydigi Motionelf X9769">
+飞智手柄数据分析：
+
+
+deviceName
+id
+motionRangeSize
+productId
+Sources
+type
+VendorId
+
+
+
+
+Flydigi Motionelf X9
+8
+4
+9232
+8194
+0
+1204
+
+
+Flydigi Motionelf ">
     
     
     
@@ -84,7 +104,7 @@ Flydigi Motionelf X9769">
     </p>
   <p class="article-time">
     <time datetime="2015-10-28T14:28:18.000Z" itemprop="datePublished">2015-10-28</time>
-    更新日期:<time datetime="2016-04-13T05:43:47.000Z" itemprop="dateModified">2016-04-13</time>
+    更新日期:<time datetime="2016-06-14T06:23:27.000Z" itemprop="dateModified">2016-06-14</time>
     
   </p>
 </header>
@@ -93,29 +113,130 @@ Flydigi Motionelf X9769">
 		
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
-		
+		<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#飞智手柄数据分析："><span class="toc-number">1.</span> <span class="toc-text">飞智手柄数据分析：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#飞智手柄sources数据"><span class="toc-number">2.</span> <span class="toc-text">飞智手柄sources数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#gameSir-蓝牙模式下，两只手柄同联。"><span class="toc-number">3.</span> <span class="toc-text">gameSir 蓝牙模式下，两只手柄同联。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#总结：目前没发现蓝牙识别唯一的标准：编码需按照不同的设备进支持条件搜索。"><span class="toc-number">4.</span> <span class="toc-text">总结：目前没发现蓝牙识别唯一的标准：编码需按照不同的设备进支持条件搜索。</span></a></li></ol>
 		</div>
 		
 		<p>名称排列对应如下：</p>
-<p>—————–》<br>deviceName<br>id<br>motionRangeSize<br>productId<br>Sources<br>type<br>VendorId<br>—————-》</p>
-<p>飞智手柄数据如下：</p>
-<p>Flydigi Motionelf X9<br>8<br>4<br>9232<br>8194<br>0<br>1204 </p>
-<p>Flydigi Motionelf X9<br>7<br>6<br>9232<br>16778513<br>1<br>1204</p>
-<p>Flydigi Motionelf X9<br>9<br>1<br>9232<br>16779025<br>2<br>1204</p>
-<p>飞智手柄数据分析：<br>1.InputDevice中motionRangeSize==8一个也没有，所以中这个条件不能成为所有（游戏控制Inputdevice）的依据</p>
-<p>gameSir手柄数据分析：</p>
-<p>g3s增强版中（3个InputDevice）：1.sources 支持InputDevice.SOURCE_JOYSTICK（1000000000000000000000000：16777216）：2 个 InputDevice。<br>                               2.motionRangeSize==8只有一个InputDevice且为游戏控制。</p>
-<p>g3f家庭版中（2个InputDevice）：1.sources 支持InputDevice.SOURCE_JOYSTICK：2 个 InputDevice 且 motionRangeSize==8 。 </p>
-<p>source对比<br>                                                      2进制                                    10进制                         16进制<br>SOURCE_JOYSTICK=0x01000000 | SOURCE_CLASS_JOYSTICK   1000000000000000000010000               16777232                         0x10000100<br>                                                     1000000000000000000000000               16777216                         0x01000000<br>SOURCE_CLASS_JOYSTICK                                  0000000000000000000010000                    16                              0x00000010</p>
-<p>SOURCE_KEYBOARD = 0x00000100 | SOURCE_CLASS_BUTTON;  0000000000000000100000001                  257                               0x101<br>                                                     0000000000000000100000000                  256                               0x00000100<br>SOURCE_CLASS_BUTTON = 0x00000001                     0000000000000000000000001                   1                                   1</p>
-<p>SOURCE_MOUSE                                            0000000000010000000000010                    8194                               0x00002002</p>
-<p>InputDevice的类型支持分析如下：（采用25位二进制（最高位32）的位数来表示usb外接设备的支持)，<em>支持类型则进行&amp;运算</em></p>
-<p>飞智手柄sources数据<br>16778513 -&gt; 1000000000000010100010001    支持KEYBOARD，JOYSTICK   （hit-&gt;device）<br>16779025 -&gt; 1000000000000011100010001    支持KEYBOARD，JOYSTICK     两组对比第十位不一样</p>
+<h3 id="飞智手柄数据分析："><a href="#飞智手柄数据分析：" class="headerlink" title="飞智手柄数据分析："></a>飞智手柄数据分析：</h3><table>
+<thead>
+<tr>
+<th style="text-align:center">deviceName</th>
+<th style="text-align:center">id</th>
+<th style="text-align:center">motionRangeSize</th>
+<th style="text-align:center">productId</th>
+<th style="text-align:center">Sources</th>
+<th style="text-align:center">type</th>
+<th style="text-align:center">VendorId</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Flydigi Motionelf X9</td>
+<td style="text-align:center">8</td>
+<td style="text-align:center">4</td>
+<td style="text-align:center">9232</td>
+<td style="text-align:center">8194</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1204</td>
+</tr>
+<tr>
+<td style="text-align:center">Flydigi Motionelf X9</td>
+<td style="text-align:center">7</td>
+<td style="text-align:center">6</td>
+<td style="text-align:center">9232</td>
+<td style="text-align:center">16778513</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1204</td>
+</tr>
+<tr>
+<td style="text-align:center">Flydigi Motionelf X9</td>
+<td style="text-align:center">9</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">9232</td>
+<td style="text-align:center">16779025</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">1204</td>
+</tr>
+</tbody>
+</table>
+<p>1.InputDevice中motionRangeSize==8一个也没有，所以中这个条件不能成为所有（游戏控制Inputdevice）的依据</p>
+<p>###gameSir手柄数据分析：</p>
+<ul>
+<li>g3s增强版中（3个InputDevice）：</li>
+</ul>
+<ol>
+<li>sources 支持InputDevice.SOURCE_JOYSTICK（1000000000000000000000000：16777216）：2 个 InputDevice。</li>
+<li>motionRangeSize==8只有一个InputDevice且为游戏控制。</li>
+</ol>
+<ul>
+<li>g3f家庭版中（2个InputDevice）：</li>
+</ul>
+<ol>
+<li>sources 支持InputDevice.SOURCE_JOYSTICK：2 个 InputDevice 且 motionRangeSize==8 。 </li>
+</ol>
+<p>source对比</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">sourceName</th>
+<th style="text-align:center">2进制</th>
+<th style="text-align:center">10进制</th>
+<th>16进制</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">-</td>
+<td style="text-align:center">1000000000000000000010000</td>
+<td style="text-align:center">16777232</td>
+<td>0x10000100</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center">1000000000000000000000000</td>
+<td style="text-align:center">16777216</td>
+<td>0x01000000</td>
+</tr>
+<tr>
+<td style="text-align:center">SOURCE_CLASS_JOYSTICK</td>
+<td style="text-align:center">0000000000000000000010000</td>
+<td style="text-align:center">16</td>
+<td>0x00000010</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center">0000000000000000100000001</td>
+<td style="text-align:center">257</td>
+<td>0x101</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center">0000000000000000100000000</td>
+<td style="text-align:center">256</td>
+<td>0x00000100</td>
+</tr>
+<tr>
+<td style="text-align:center">SOURCE_CLASS_BUTTON</td>
+<td style="text-align:center">0000000000000000000000001</td>
+<td style="text-align:center">1</td>
+<td>0x00000001</td>
+</tr>
+<tr>
+<td style="text-align:center">SOURCE_MOUSE</td>
+<td style="text-align:center">0000000000010000000000010</td>
+<td style="text-align:center">8194</td>
+<td>0x00002002</td>
+</tr>
+</tbody>
+</table>
+<p>​<br>SOURCE_JOYSTICK=0x01000000 | SOURCE_CLASS_JOYSTICK     </p>
+<p>​SOURCE_KEYBOARD = 0x00000100 | SOURCE_CLASS_BUTTON;                                                   </p>
+<p>InputDevice的类型支持分析如下：（采用25位二进制（最高位32）的位数来表示usb外接设备的支持,判断支持类型进行&amp;运算)</p>
+<h3 id="飞智手柄sources数据"><a href="#飞智手柄sources数据" class="headerlink" title="飞智手柄sources数据"></a>飞智手柄sources数据</h3><p>16778513 –&gt; 1000000000000010100010001    支持KEYBOARD，JOYSTICK   （hit-&gt;device）<br>16779025 –&gt; 1000000000000011100010001    支持KEYBOARD，JOYSTICK     两组对比第十位不一样</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span><br><span class="line"> * There is no keyboard.</span><br><span class="line"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> KEYBOARD_TYPE_NONE = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span><br><span class="line"> * The keyboard is not fully alphabetic.  It may be a numeric keypad or an assortment</span><br><span class="line"> * of buttons that are not mapped as alphabetic keys suitable for text input.按键映射为字母键不适合文本输入</span><br><span class="line"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> KEYBOARD_TYPE_NON_ALPHABETIC = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span><br><span class="line"> * The keyboard supports a complement of alphabetic keys.键盘字母键的补充支持。</span><br><span class="line"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> KEYBOARD_TYPE_ALPHABETIC = <span class="number">2</span>;</span><br></pre></td></tr></table></figure>
-<p>gameSir 蓝牙模式下，两只手柄同联。<br>        motionRangeSize==12（加次判断条件）<br>        source=  1000000000010010100010011（16786707）</p>
-<pre><code>联想条件：motionsize值比较大的。
-</code></pre><p>这个数据对比：说明source也不能成为唯一判断的标准。</p>
-<p>总结：目前没发现唯一的标准：编码需按照不同的设备进支持条件搜索。<br>可参考的条件：<br>    1.keyboardType&gt;=1(飞智手柄。过滤掉type=2&amp;&amp;name=Flydigi Motionelf X9 )<br>    2.gamesir设备 sources 支持InputDevice.SOURCE_JOYSTICK&amp;&amp;motionRangeSize==8 </p>
+<h3 id="gameSir-蓝牙模式下，两只手柄同联。"><a href="#gameSir-蓝牙模式下，两只手柄同联。" class="headerlink" title="gameSir 蓝牙模式下，两只手柄同联。"></a>gameSir 蓝牙模式下，两只手柄同联。</h3><p> motionRangeSize==12（加次判断条件）source=  1000000000010010100010011（16786707）<br>  联想条件：motionsize值比较大的。</p>
+<p>这个数据对比：说明source也不能成为唯一判断的标准。</p>
+<h3 id="总结：目前没发现蓝牙识别唯一的标准：编码需按照不同的设备进支持条件搜索。"><a href="#总结：目前没发现蓝牙识别唯一的标准：编码需按照不同的设备进支持条件搜索。" class="headerlink" title="总结：目前没发现蓝牙识别唯一的标准：编码需按照不同的设备进支持条件搜索。"></a>总结：目前没发现蓝牙识别唯一的标准：编码需按照不同的设备进支持条件搜索。</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">可参考的条件：</span><br><span class="line"><span class="number">1</span>. keyboardType&gt;=<span class="number">1</span>(飞智手柄。过滤掉type=<span class="number">2</span>&amp;&amp;name=Flydigi Motionelf X9 )</span><br><span class="line"><span class="number">2</span>. gamesir设备 sources 支持InputDevice.SOURCE_JOYSTICK&amp;&amp;motionRangeSize==<span class="number">8</span></span><br></pre></td></tr></table></figure>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -135,18 +256,18 @@ Flydigi Motionelf X9769">
 <nav class="article-nav clearfix">
  
  <div class="prev" >
- <a href="/2015/10/28/一个签名引发的血案/" title="一个签名引发的血案">
+ <a href="/2015/10/30/stetho使用体验/" title="stetho使用体验">
   <strong>PREVIOUS:</strong><br/>
   <span>
-  一个签名引发的血案</span>
+  stetho使用体验</span>
 </a>
 </div>
 
 
 <div class="next">
-<a href="/2015/09/19/20150919/"  title="程序员">
+<a href="/2015/10/28/日志查看带来的失误/"  title="日志查看带来的失误">
  <strong>NEXT:</strong><br/> 
- <span>程序员
+ <span>日志查看带来的失误
 </span>
 </a>
 </div>
@@ -166,7 +287,7 @@ Flydigi Motionelf X9769">
 
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
-  
+  <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#飞智手柄数据分析："><span class="toc-number">1.</span> <span class="toc-text">飞智手柄数据分析：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#飞智手柄sources数据"><span class="toc-number">2.</span> <span class="toc-text">飞智手柄sources数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#gameSir-蓝牙模式下，两只手柄同联。"><span class="toc-number">3.</span> <span class="toc-text">gameSir 蓝牙模式下，两只手柄同联。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#总结：目前没发现蓝牙识别唯一的标准：编码需按照不同的设备进支持条件搜索。"><span class="toc-number">4.</span> <span class="toc-text">总结：目前没发现蓝牙识别唯一的标准：编码需按照不同的设备进支持条件搜索。</span></a></li></ol>
   </div>
 
 <div id="asidepart">
