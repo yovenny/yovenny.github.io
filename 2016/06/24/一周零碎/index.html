@@ -7,18 +7,19 @@
   <meta name="360-site-verification" content="67fbcc5a67f4c65c057315b28fa0b2c8" />
 <meta name="google-site-verification" content="2GzxQ0VtXwTSUdmGm6DzcmhTzM_I9QmzCb_pzpMzD88" />
   
-    <title>面试参考 | one moment</title>
+    <title>一周零碎 | one moment</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
     
     <meta name="author" content="bocheng">
     
-    <meta name="description" content="###web 面试参考(来自dreampie的面试题)
+    <meta name="description" content="监听EditText.onTextChange数据记录。public void beforeTextChanged(CharSequence s, int start, int count, int after)
 
-restful是什么，应该在什么情景下使用？
-dubbo和zookeeper是什么，分别是做什么的？
-用过哪些mq框架，举例说明生产者消费者模型？
-java常见的数据结构有哪些，说明HashMap的结构与原理？
-ThreadLocal是什么，">
+
+
+character
+start
+lengthBefore
+lengthAfter">
     
     
     
@@ -78,15 +79,15 @@ ThreadLocal是什么，">
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2015/10/28/web 面试参考/" title="面试参考" itemprop="url">面试参考</a>
+      <a href="/2016/06/24/一周零碎/" title="一周零碎" itemprop="url">一周零碎</a>
   </h1>
   <p class="article-author">By
     
       <a href="http://yovenny.com" title="bocheng">bocheng</a>
     </p>
   <p class="article-time">
-    <time datetime="2015-10-28T14:28:18.000Z" itemprop="datePublished">2015-10-28</time>
-    更新日期:<time datetime="2016-06-14T07:03:53.000Z" itemprop="dateModified">2016-06-14</time>
+    <time datetime="2016-06-24T06:25:31.000Z" itemprop="datePublished">2016-06-24</time>
+    更新日期:<time datetime="2016-06-24T07:05:09.000Z" itemprop="dateModified">2016-06-24</time>
     
   </p>
 </header>
@@ -95,25 +96,104 @@ ThreadLocal是什么，">
 		
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
-		
+		<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#监听EditText-onTextChange数据记录。"><span class="toc-number">1.</span> <span class="toc-text">监听EditText.onTextChange数据记录。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#视频压缩"><span class="toc-number">2.</span> <span class="toc-text">视频压缩</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#mac-快捷键-amp-键盘标识"><span class="toc-number">3.</span> <span class="toc-text">mac 快捷键&键盘标识</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#人生的scrum"><span class="toc-number">4.</span> <span class="toc-text">人生的scrum</span></a></li></ol>
 		</div>
 		
-		<p>###web 面试参考(来自dreampie的面试题)</p>
-<ol>
-<li>restful是什么，应该在什么情景下使用？</li>
-<li>dubbo和zookeeper是什么，分别是做什么的？</li>
-<li>用过哪些mq框架，举例说明生产者消费者模型？</li>
-<li>java常见的数据结构有哪些，说明HashMap的结构与原理？</li>
-<li>ThreadLocal是什么，用于哪些情景？</li>
-<li>常见的orm二级缓存分别是怎么实现的？</li>
-<li>jdk1.8有哪些新特性？</li>
-<li>git和svn的区别？</li>
-<li>如何设计一个用户视频内容推荐系统？</li>
-<li>参与或者自主开发的已有用户使用的开源项目？</li>
-<li>常上的技术网站？github，博客，知乎 账号地址？</li>
-<li>场景1：假设应用用户量非常大，分成了10张表，应该怎么分表，用户登陆，查询用户详情等分别怎么定位是哪张表？</li>
-<li>场景2：有100件产品做秒杀，但是每次秒杀的并发10w，有10台负载的服务器，怎么保证秒杀的产品不会超过100件？</li>
-</ol>
+		<h3 id="监听EditText-onTextChange数据记录。"><a href="#监听EditText-onTextChange数据记录。" class="headerlink" title="监听EditText.onTextChange数据记录。"></a>监听EditText.onTextChange数据记录。</h3><p>public void beforeTextChanged(CharSequence s, int start, int count, int after)</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">character</th>
+<th style="text-align:center">start</th>
+<th style="text-align:center">lengthBefore</th>
+<th style="text-align:center">lengthAfter</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">l</td>
+<td style="text-align:center">int start0,</td>
+<td style="text-align:center">int lengthBefore,0</td>
+<td style="text-align:center">int lengthAfter1</td>
+</tr>
+<tr>
+<td style="text-align:left">l-o</td>
+<td style="text-align:center">int start1,</td>
+<td style="text-align:center">int lengthBefore,0</td>
+<td style="text-align:center">int lengthAfter1</td>
+</tr>
+<tr>
+<td style="text-align:left">l-o-v</td>
+<td style="text-align:center">int start2,</td>
+<td style="text-align:center">int lengthBefore,0</td>
+<td style="text-align:center">int lengthAfter1</td>
+</tr>
+<tr>
+<td style="text-align:left">l-o-v-e</td>
+<td style="text-align:center">int start3,</td>
+<td style="text-align:center">int lengthBefore,0</td>
+<td style="text-align:center">int lengthAfter1</td>
+</tr>
+<tr>
+<td style="text-align:left">l-o-v</td>
+<td style="text-align:center">int start3,</td>
+<td style="text-align:center">int lengthBefore,1</td>
+<td style="text-align:center">int lengthAfter0</td>
+</tr>
+<tr>
+<td style="text-align:left">l-o</td>
+<td style="text-align:center">int start2,</td>
+<td style="text-align:center">int lengthBefore,1</td>
+<td style="text-align:center">int lengthAfter0</td>
+</tr>
+<tr>
+<td style="text-align:left">l</td>
+<td style="text-align:center">int start1,</td>
+<td style="text-align:center">int lengthBefore,1</td>
+<td style="text-align:center">int lengthAfter0</td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:center">int start0,</td>
+<td style="text-align:center">int lengthBefore,1</td>
+<td style="text-align:center">int lengthAfter0</td>
+</tr>
+<tr>
+<td style="text-align:left">－－－－－</td>
+<td style="text-align:center">－－－－－</td>
+<td style="text-align:center">－－－－－－－</td>
+<td style="text-align:center">－－－－－－－</td>
+</tr>
+<tr>
+<td style="text-align:left">emoji(9)</td>
+<td style="text-align:center">int start0,</td>
+<td style="text-align:center">int lengthBefore,0</td>
+<td style="text-align:center">int lengthAfter9</td>
+</tr>
+<tr>
+<td style="text-align:left">emoji(9)-emoji(9)</td>
+<td style="text-align:center">int start9,</td>
+<td style="text-align:center">int lengthBefore,0</td>
+<td style="text-align:center">int lengthAfter9</td>
+</tr>
+<tr>
+<td style="text-align:left">emoji(9)</td>
+<td style="text-align:center">int start9,</td>
+<td style="text-align:center">int lengthBefore,9</td>
+<td style="text-align:center">int lengthAfter0</td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:center">int start0,</td>
+<td style="text-align:center">int lengthBefore,9</td>
+<td style="text-align:center">int lengthAfter0</td>
+</tr>
+</tbody>
+</table>
+<h3 id="视频压缩"><a href="#视频压缩" class="headerlink" title="视频压缩"></a>视频压缩</h3><p>目前了解到可以采用的方法：<br>1.fffmpeg4android 来编码解码。<a href="https://github.com/byteShaft/video-compress.git" target="_blank" rel="external">https://github.com/byteShaft/video-compress.git</a><br>2.利用android提供的api编码解码。<a href="https://github.com/yovenny/VideoCompress.git" target="_blank" rel="external">https://github.com/yovenny/VideoCompress.git</a></p>
+<p>基于目前的测试来看，android api压缩效率高一点。</p>
+<h3 id="mac-快捷键-amp-键盘标识"><a href="#mac-快捷键-amp-键盘标识" class="headerlink" title="mac 快捷键&amp;键盘标识"></a>mac 快捷键&amp;键盘标识</h3><p> <img src="http://7xl7ew.com1.z0.glb.clouddn.com/mac_keyboardpng" alt="mac_keyboard"></p>
+<h3 id="人生的scrum"><a href="#人生的scrum" class="headerlink" title="人生的scrum"></a>人生的scrum</h3><p><img src="http://7xl7ew.com1.z0.glb.clouddn.com/life_scrumpng" alt="life_scrum"></p>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -123,7 +203,7 @@ ThreadLocal是什么，">
 
 <div class="article-share" id="share">
 
-  <div data-url="http://yovenny.com/2015/10/28/web 面试参考/" data-title="面试参考 | one moment" data-tsina="null" class="share clearfix">
+  <div data-url="http://yovenny.com/2016/06/24/一周零碎/" data-title="一周零碎 | one moment" data-tsina="null" class="share clearfix">
   </div>
 
 </div>
@@ -132,19 +212,11 @@ ThreadLocal是什么，">
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2015/10/30/stetho使用体验/" title="stetho使用体验">
-  <strong>PREVIOUS:</strong><br/>
-  <span>
-  stetho使用体验</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2015/10/28/手柄数据分析/"  title="手柄数据分析">
+<a href="/2016/04/28/gradle 上传jcenter/"  title="gradle 上传jcenter">
  <strong>NEXT:</strong><br/> 
- <span>手柄数据分析
+ <span>gradle 上传jcenter
 </span>
 </a>
 </div>
@@ -154,7 +226,7 @@ ThreadLocal是什么，">
 	
 <section class="comment">
 	
-	<div class="ds-thread" data-title="面试参考" data-thread-key="web 面试参考" data-author-key="bocheng" data-url="http://yovenny.com/post/web 面试参考"></div>
+	<div class="ds-thread" data-title="一周零碎" data-thread-key="一周零碎" data-author-key="bocheng" data-url="http://yovenny.com/post/一周零碎"></div>
 	
 </section>
 
@@ -164,7 +236,7 @@ ThreadLocal是什么，">
 
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
-  
+  <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#监听EditText-onTextChange数据记录。"><span class="toc-number">1.</span> <span class="toc-text">监听EditText.onTextChange数据记录。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#视频压缩"><span class="toc-number">2.</span> <span class="toc-text">视频压缩</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#mac-快捷键-amp-键盘标识"><span class="toc-number">3.</span> <span class="toc-text">mac 快捷键&键盘标识</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#人生的scrum"><span class="toc-number">4.</span> <span class="toc-text">人生的scrum</span></a></li></ol>
   </div>
 
 <div id="asidepart">
